@@ -96,7 +96,7 @@ const Home: React.FC = () => {
       </section>
 
       {/* Skills Preview */}
-      <section className="bg-white p-8 rounded-lg shadow-md">
+      {/* <section className="bg-white p-8 rounded-lg shadow-md">
         <h2 className="text-2xl font-bold text-gray-800 mb-6">Skills</h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           <div className="text-center p-4 bg-gray-50 rounded-lg">
@@ -112,7 +112,7 @@ const Home: React.FC = () => {
             <h3 className="font-semibold">Tailwind CSS</h3>
           </div>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 };
