@@ -27,7 +27,7 @@ const Blog: React.FC = () => {
         </article>
 
         <article className="bg-white p-6 rounded-lg shadow-md">
-          <h2 className="text-xl font-bold text-gray-800 mb-3">
+            <h2 className="text-xl font-bold text-gray-800 mb-3">
             TypeScript Best Practices
           </h2>
           <p className="text-gray-600 mb-4">

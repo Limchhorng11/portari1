@@ -1,3 +1,5 @@
+import { title } from "process";
+
 export interface Project {
   id: string;
   title: string;
@@ -34,3 +36,15 @@ export interface NavItem {
   path: string;
   label: string;
 } 
+
+export interface SkillbySect {
+  title: string;
+  description: string;
+  icon: React.ReactNode;
+}
+
+export interface benefits{
+  title: string;
+  description: string;
+}
+

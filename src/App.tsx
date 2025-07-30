@@ -1,5 +1,11 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
+
+// Import CSS
+import './style/content.css';
+
+// Import Components
 import Layout from './components/layout/Layout';
 import Home from './pages/Home';
 import About from './pages/About';

@@ -6,7 +6,7 @@ const Navigation: React.FC = () => {
   const location = useLocation();
 
   return (
-    <nav className="bg-white shadow-md p-4">
+    <nav className="bg-white p-4">
       <div className="max-w-6xl mx-auto flex justify-between items-center">
         <Link to="/" className="text-xl font-bold text-gray-800 hover:text-blue-600 transition-colors">
           My Portfolio
