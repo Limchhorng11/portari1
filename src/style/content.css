@@ -3,7 +3,7 @@
 .hero_content {@apply flex items-center gap-16;}
 .hero_left {@apply flex-1 pr-10;}
 .hello_bubble {@apply font-medium inline-block bg-white rounded-2xl px-4 py-2 mb-5 text-xl  text-gray-700;}
-.hero_title {@apply w-[750px] text-5xl font-bold text-black mb-5 leading-tight;}
+.hero_title {@apply xl:w-[750px] w-[500px]  xl:text-5xl text-4xl font-bold text-black mb-5 leading-tight;}
 .hero_description {@apply text-lg text-gray-600 leading-relaxed mb-7;}
 .hero_buttons {@apply flex gap-5 mb-10;}
 
@@ -18,11 +18,11 @@
 .stat_label {@apply text-sm text-gray-600;}
 
 .hero_right {@apply flex-1 absolute right-0 top-[62px] rounded-lg overflow-hidden;}
-.hero_image_wrapper {@apply relative w-[815px] h-[calc(100vh-62px)] rounded-[24px] rounded-tr-none overflow-hidden;}
+.hero_image_wrapper {@apply relative lg:w-[815px] md:w-[600px] sm:w-[600px]  h-[calc(100vh-62px)] rounded-[24px] rounded-tr-none overflow-hidden;}
 .hero_image {@apply w-full h-full object-cover relative z-10 ;}
 .hero_image_wrapper img{@apply rounded-[24px] rounded-tr-none;}
 
-.hero_description{ @apply w-[580px] text-lg text-gray-600 leading-relaxed mb-7;}
+.hero_description{ @apply w-[580px] text-lg md:text-sm text-gray-600 leading-relaxed mb-7;}
 
 @media (max-width: 768px) {
 .hero_content {@apply flex-col gap-10;}
