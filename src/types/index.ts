@@ -48,3 +48,17 @@ export interface benefits{
   description: string;
 }
 
+// Global thumbnail data structure
+export interface ThumbnailData {
+  id: number;
+  color: string;
+  textColor: string;
+  image: string;
+  label: string;
+}
+
+export interface ProjectData {
+  id: string;
+  title: string;
+  thumbs: ThumbnailData[];
+}

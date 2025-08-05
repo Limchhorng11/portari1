@@ -1,5 +1,101 @@
 import { title } from 'process';
-import { NavItem } from '../types';
+import { NavItem, ThumbnailData, ProjectData } from '../types';
+
+
+// Import different images for thumbnails
+import thumbnail1 from '../assets/images/im_thaumnail.png';
+import thumbnail2 from '../assets/images/im_top_sect.png';
+
+
+
+// Centralized thumbnail configuration
+export const THUMBNAIL_CONFIG = {
+  images: {
+    thumbnail1,
+    thumbnail2
+  }
+};
+
+// Function to generate thumbnails with consistent pattern
+export const generateThumbnails = (
+  count: number, 
+  images: string[]
+): ThumbnailData[] => {
+  return Array.from({ length: count }, (_, index) => ({
+    id: index + 1,
+    color: index % 2 === 0 
+      ? 'from-purple-200 to-pink-200' 
+      : 'from-purple-300 to-pink-300',
+    textColor: index % 2 === 0 
+      ? 'text-purple-600' 
+      : 'text-purple-700',
+    image: images[index % images.length],
+    label: `Page ${index + 1}`
+  }));
+};
+
+// Project-specific thumbnail data
+export const perfumeThumbs = generateThumbnails(
+  6,
+  [THUMBNAIL_CONFIG.images.thumbnail1, THUMBNAIL_CONFIG.images.thumbnail2]
+);
+
+export const charityThumbs = generateThumbnails(
+  6,
+  [THUMBNAIL_CONFIG.images.thumbnail2, THUMBNAIL_CONFIG.images.thumbnail1]
+);
+
+export const skillbridgeThumbs = generateThumbnails(
+  6,
+  [THUMBNAIL_CONFIG.images.thumbnail1, THUMBNAIL_CONFIG.images.thumbnail2]
+);
+
+// Global projects data
+export const PROJECTS_DATA: ProjectData[] = [
+  {
+    id: 'perfume',
+    title: 'Z - Aura Perfume Website Design',
+    
+    thumbs: perfumeThumbs
+  },
+  {
+    id: 'charity',
+    title: 'Forhelp Charity Website Design',
+   
+    thumbs: charityThumbs
+  },
+  {
+    id: 'skillbridge',
+    title: 'Skill Bridge Website Design',
+    
+    thumbs: skillbridgeThumbs
+  }
+];
+
+// Utility function to get project by ID
+export const getProjectById = (id: string): ProjectData | undefined => {
+  return PROJECTS_DATA.find(project => project.id === id);
+};
+
+// Utility function to get all project IDs
+export const getAllProjectIds = (): string[] => {
+  return PROJECTS_DATA.map(project => project.id);
+};
+
+// Utility function to add new project
+export const addNewProject = (projectData: Omit<ProjectData, 'id'>): ProjectData => {
+  const newProject: ProjectData = {
+    ...projectData,
+    id: `project-${Date.now()}` // Generate unique ID
+  };
+  PROJECTS_DATA.push(newProject);
+  return newProject;
+};
+
+
+
+
+
 
 
 export const SITE_CONFIG = {
@@ -66,12 +162,12 @@ export const benefits = [
   {
     title: "Customized Designs Tailored to Your Brand",
     description:
-      "I understand the importance of creating a unique and memorable brand identity. By collaborating closely with you, I ensure that your website reflects your brand’s personality, values, and objectives. The result is a customized design that sets you apart from the competition and resonates with your target audience.",
+      "I understand the importance of creating a unique and memorable brand identity. By collaborating closely with you, I ensure that your website reflects your brand's personality, values, and objectives. The result is a customized design that sets you apart from the competition and resonates with your target audience.",
   },
   {
     title: "Creative Excellence that Captivates Visitors",
     description:
-      "With a keen eye for aesthetics and a passion for creativity, I excel in designing visually stunning and engaging websites. By combining beautiful visuals, captivating typography, and strategic use of color, I create an immersive and impactful user experience. Your website will leave a lasting impression on visitors, enhancing your brand’s credibility and professionalism.",
+      "With a keen eye for aesthetics and a passion for creativity, I excel in designing visually stunning and engaging websites. By combining beautiful visuals, captivating typography, and strategic use of color, I create an immersive and impactful user experience. Your website will leave a lasting impression on visitors, enhancing your brand's credibility and professionalism.",
   },
   {
     title: "User-Centric Approach for Optimal Experience",
@@ -81,7 +177,7 @@ export const benefits = [
   {
     title: "Mobile-Friendly Designs for Broad Accessibility",
     description:
-      "In today’s mobile-dominated landscape, having a responsive website is crucial. I specialize in creating mobile-friendly designs that adapt flawlessly across different devices and screen sizes. Your website will look and perform beautifully, whether accessed from a desktop, smartphone, or tablet, ensuring that you reach and engage your audience effectively.",
+      "In today's mobile-dominated landscape, having a responsive website is crucial. I specialize in creating mobile-friendly designs that adapt flawlessly across different devices and screen sizes. Your website will look and perform beautifully, whether accessed from a desktop, smartphone, or tablet, ensuring that you reach and engage your audience effectively.",
   },
   {
     title: "Expertise in Cutting-Edge Technologies",
