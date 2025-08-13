@@ -48,7 +48,7 @@ export interface benefits{
   description: string;
 }
 
-// Global thumbnail data structure
+// Global thumbnail data structure (use in constants.ts Line 11-93 and Home.tsx Line 115-125)
 export interface ThumbnailData {
   id: number;
   color: string;
@@ -61,4 +61,11 @@ export interface ProjectData {
   id: string;
   title: string;
   thumbs: ThumbnailData[];
+}
+
+// FAQ Item (use in constants.ts Line 248-273 and FAQ.tsx Line 10-17)
+export interface FAQItem {
+  id: number;
+  question: string;
+  answer: string;
 }

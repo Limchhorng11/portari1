@@ -31,3 +31,13 @@
 .hero_buttons {@apply flex-col;}
 .hero_stats {@apply justify-between;}
 }
+
+@keyframes scrollUp {
+  0% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-10px) scale(1.1); }
+  100% { transform: translateY(0) scale(1); }
+}
+
+.scroll-up-animation {
+  animation: scrollUp 0.6s ease-in-out;
+}

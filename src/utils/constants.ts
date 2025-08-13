@@ -1,18 +1,18 @@
-import { title } from 'process';
-import { NavItem, ThumbnailData, ProjectData } from '../types';
+import { NavItem, ThumbnailData, ProjectData, FAQItem} from '../types';
 
 
 // Import different images for thumbnails
-import thumbnail1 from '../assets/images/im_thaumnail.png';
-import thumbnail2 from '../assets/images/im_top_sect.png';
-
+import thumbnail1 from '../assets/images/im_thaumnail01.png';
+import thumbnail2 from '../assets/images/im_thaumnail02.png';
+import thumbnail3 from '../assets/images/im_thaumnail03.png';
 
 
 // Centralized thumbnail configuration
 export const THUMBNAIL_CONFIG = {
   images: {
     thumbnail1,
-    thumbnail2
+    thumbnail2, 
+    thumbnail3
   }
 };
 
@@ -37,17 +37,17 @@ export const generateThumbnails = (
 // Project-specific thumbnail data
 export const perfumeThumbs = generateThumbnails(
   6,
-  [THUMBNAIL_CONFIG.images.thumbnail1, THUMBNAIL_CONFIG.images.thumbnail2]
+  [THUMBNAIL_CONFIG.images.thumbnail1, THUMBNAIL_CONFIG.images.thumbnail2,THUMBNAIL_CONFIG.images.thumbnail3]
 );
 
 export const charityThumbs = generateThumbnails(
   6,
-  [THUMBNAIL_CONFIG.images.thumbnail2, THUMBNAIL_CONFIG.images.thumbnail1]
+  [THUMBNAIL_CONFIG.images.thumbnail1, THUMBNAIL_CONFIG.images.thumbnail2,THUMBNAIL_CONFIG.images.thumbnail3]
 );
 
 export const skillbridgeThumbs = generateThumbnails(
   6,
-  [THUMBNAIL_CONFIG.images.thumbnail1, THUMBNAIL_CONFIG.images.thumbnail2]
+  [THUMBNAIL_CONFIG.images.thumbnail3, THUMBNAIL_CONFIG.images.thumbnail2,THUMBNAIL_CONFIG.images.thumbnail1]
 );
 
 // Global projects data
@@ -191,4 +191,85 @@ export const benefits = [
   },
 ];
 
+export const TESTIMONIALS_DATA = [
+  {
+    id: 1,
+    name: "Sarah Thompson",
+    company: "produce-ui.com",
+    rating: 5,
+    testimonial: "Jeffery Cannon is a talented web designer with unmatched attention to detail and creative flair. He transformed my website and provided expert guidance throughout the process. I highly recommend him.",
+    socialLinks: {
+      linkedin: "#none",
+      facebook: "#none",
+      twitter: "#none"
+    }
+  },
+  {
+    id: 2,
+    name: "Emily Roberts",
+    company: "produce-ui.com",
+    rating: 5,
+    testimonial: "I'm thrilled with the website Jeffery Cannon designed for me. He created a visually stunning and user-friendly site. His expertise, responsiveness, and professionalism are outstanding. Highly recommend!",
+    socialLinks: {
+      linkedin: "#none",
+      facebook: "#none",
+      twitter: "#none"
+    }
+  },
+  {
+    id: 3,
+    name: "Laura Adams",
+    company: "produce-ui.com",
+    rating: 5,
+    testimonial: "Working with Jeffery Cannon on our web design project was excellent. His creativity, technical expertise, and understanding of user experience design significantly impacted our website's performance and engagement.",
+    socialLinks: {
+      linkedin: "#none",
+      facebook: "#none",
+      twitter: "#none"
+    }
+  },
+  {
+    id: 4,
+    name: "Michael Chen",
+    company: "produce-ui.com",
+    rating: 3,
+    testimonial: "Working with Jeffery Cannon on our web design project was excellent. His creativity, technical expertise, and understanding of user experience design significantly impacted our website's performance and engagement.",
+    socialLinks: {
+      linkedin: "#none",
+      facebook: "#none",
+      twitter: "#none"
+    }
+  }
+];
 
+
+export const FAQ_DATA: FAQItem[] = [
+  {
+    id: 1,
+    question: "Can you work with clients remotely?",
+    answer: "Absolutely! I have experience working with clients from all around the world. Through effective communication channels such as email, video calls, and project management tools, I ensure seamless collaboration regardless of geographical location."
+  },
+  {
+    id: 2,
+    question: "How long does it typically take to complete a web design project?",
+    answer: "The timeline varies depending on the project's complexity and scope. A simple website typically takes 2-4 weeks, while more complex projects can take 6-8 weeks. I'll provide a detailed timeline during our initial consultation."
+  },
+  {
+    id: 3,
+    question: "Do you offer website maintenance services?",
+    answer: "Yes, I offer comprehensive website maintenance services including regular updates, security monitoring, performance optimization, and content updates to keep your website running smoothly and securely."
+  },
+  {
+    id: 4,
+    question: "Can you optimize my website for search engines?",
+    answer: "Absolutely! I implement SEO best practices including proper meta tags, structured data, mobile optimization, fast loading times, and clean code structure to help improve your website's search engine rankings."
+  },
+  {
+    id: 5,
+    question: "Can you integrate third-party tools or platforms into my website?",
+    answer: "Yes, I can integrate various third-party tools and platforms such as payment gateways, CRM systems, email marketing tools, analytics platforms, and social media integrations to enhance your website's functionality."
+  }
+];
+
+// Re-export types for use in admin components
+export type { FAQItem, ProjectData };
